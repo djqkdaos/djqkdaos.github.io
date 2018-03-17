@@ -8,7 +8,11 @@ categories: bigdata
   <h1>Archive</h1>
   <ul class="posts">
     {% for post in site.posts %}
-    <li><span><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time class="pull-right post-list">{{ post.date | date_to_string | date: "%b %-d, %Y"  }}</h4></time></span></span></li>
-    {% endfor %}
+		{% for tag in post.categories %}
+			{% for thisTag in page.categories %}
+			<li><span><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time class="pull-right post-list">{{ post.date | date_to_string | date: "%b %-d, %Y"  }}</h4></time></span></span></li>
+			{% endfor %}
+		{% endfor %}
+	{% endfor %}
   </ul>
 </div>
