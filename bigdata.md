@@ -3,16 +3,31 @@ title: bigdata
 permalink: /bigdata/
 categories: bigdata
 ---
-<div class="container">
-  <div id="article">
-  <h1>Archive</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-		{% for tag in post.categories %}
-			{% for thisTag in page.categories %}
-			<li><span><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time class="pull-right post-list">{{ post.date | date_to_string | date: "%b %-d, %Y"  }}</h4></time></span></span></li>
-			{% endfor %}
-		{% endfor %}
-	{% endfor %}
-  </ul>
-</div>
+{% assign hasSimilar = '' %}
+{% for post in site.posts  %}
+    {% assign postHasSimilar = false %}
+    {% for tag in post.categories %}
+        {% for thisTag in page.categories %}
+            {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
+                {% if hasSimilar.size == 0 %}
+                <div class="panel-body">
+                <h4>Related Posts</h4>
+                <ul>
+                {% endif %}
+                <li class="relatedPost">
+                    <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                    {% if post.categories %}
+                        <small>(Categories: {% for category in post.categories %}<a href="/category/{{ category }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %})</small>
+                    {% endif %}
+                </li>
+                {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
+                {% assign postHasSimilar = true %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
+{% if hasSimilar.size > 0 %}
+    </ul>
+    </div>
+{% endif %}
+
