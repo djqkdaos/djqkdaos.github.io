@@ -1,5 +1,4 @@
 ---
-layout: bigdata
 title: bigdata
 permalink: /bigdata/
 categories: bigdata
