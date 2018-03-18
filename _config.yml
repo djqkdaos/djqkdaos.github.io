@@ -11,8 +11,10 @@ location: 42°2'16"N   70°12'47"W
 disqus: diqus-username
 
 ##Make sure to edit the above fields, especially for disqus.
+plugins: [jekyll-paginate] 
 
 paginate: 6
+paginate_path: /page:num/
 
 highlighter: rouge
 markdown: kramdown
@@ -30,23 +32,8 @@ share:
 enableTags: true
 tagarray: []
 
-paginate: 6
-per_page: 6
-paginate_path: "/page:num/"
+per_page: 20
 gems: [jekyll-paginate, jekyll-gist]
   
-defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
 
-      
-      
       
