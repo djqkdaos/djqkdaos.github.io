@@ -12,6 +12,7 @@ disqus: diqus-username
 
 ##Make sure to edit the above fields, especially for disqus.
 
+paginate: 6
 
 highlighter: rouge
 markdown: kramdown
@@ -29,8 +30,8 @@ share:
 enableTags: true
 tagarray: []
 
-paginate: 20
-per_page: 20
+paginate: 6
+per_page: 6
 paginate_path: "/page:num/"
 gems: [jekyll-paginate, jekyll-gist]
   
