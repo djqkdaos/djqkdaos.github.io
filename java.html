@@ -20,6 +20,9 @@ categories: java
         {% endfor %}
     {% endfor %}
 {% endfor %}
+{% if !(postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag) %}
+	<li><span>게시글이 없습니다.<span></li>
+{% endif %}
  </ul>
 </div>
 
