@@ -9,7 +9,6 @@ linkedin: http://www.linkedin.com
 email: rnpatel[at]me.com
 location: 42°2'16"N   70°12'47"W
 disqus: diqus-username
-
 ##Make sure to edit the above fields, especially for disqus.
 plugins: [jekyll-paginate] 
 
