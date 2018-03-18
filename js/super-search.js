@@ -124,9 +124,9 @@
             searchResultsEl.classList.remove('is-hidden');
             searchResultsEl.innerHTML = matchingPosts.map(function (post) {
                 d = new Date(post.pubDate);
-				var tmp1 = post.title.substr(0,6);
-				alert(tmp1)
-                return '<li><a href="' + post.link + '">' + post.title + '<span class="search__result-date">' + d.toUTCString().replace(/.*(\d{2})\s+(\w{3})\s+(\d{4}).*/,'$2 $1, $3') + '</span></a></li>';
+				var tmp1 = post.title.substr(0,8);
+				var tmp2 = post.title.substr(post.title.length-3,post.title.length-1);
+                return '<li><a href="' + post.link + '">' + tmp1 + '..'+tmp2+'<span class="search__result-date">' + d.toUTCString().replace(/.*(\d{2})\s+(\w{3})\s+(\d{4}).*/,'$2 $1, $3') + '</span></a></li>';
             }).join('');
         }
         lastSearchResultHash = currentResultHash;
