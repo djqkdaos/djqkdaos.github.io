@@ -128,7 +128,7 @@
 				var postouthead = postout.substr(0,6);
 				var postouttail = postout.substr(postout.length-2,postout.length);
 				postout = postouthead+'..'+postouttaill
-                return '<li><a href="' + post.link + '">' + postout + '<span class="search__result-date">' + d.toUTCString().replace(/.*(\d{2})\s+(\w{3}).*/,'$2 $1') + '</span></a></li>';
+                return '<li><a href="' + post.link + '">' + post.tile + '<span class="search__result-date">' + d.toUTCString().replace(/.*(\d{2})\s+(\w{3}).*/,'$2 $1') + '</span></a></li>';
             }).join('');
         }
         lastSearchResultHash = currentResultHash;
