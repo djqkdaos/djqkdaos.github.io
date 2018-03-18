@@ -21,4 +21,3 @@ categories: bigdata
     {% endfor %}
 {% endfor %}
  </ul>
-
