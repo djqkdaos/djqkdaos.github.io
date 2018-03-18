@@ -35,5 +35,18 @@ tagarray: []
 per_page: 20
 gems: [jekyll-paginate, jekyll-gist]
   
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 
+      
+      
       
