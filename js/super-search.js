@@ -124,11 +124,8 @@
             searchResultsEl.classList.remove('is-hidden');
             searchResultsEl.innerHTML = matchingPosts.map(function (post) {
                 d = new Date(post.pubDate);
-				var postout = post.tile;
-				var postouthead = postout.substr(0,6);
-				var postouttail = postout.substr(postout.length-2,postout.length);
-				postout = postouthead+'..'+postouttaill
-                return '<li><a href="' + post.link + '">' + post.tile + '<span class="search__result-date">' + d.toUTCString().replace(/.*(\d{2})\s+(\w{3}).*/,'$2 $1') + '</span></a></li>';
+
+                return '<li><a href="' + post.link + '">' + post.title + '<span class="search__result-date">' + d.toUTCString().replace(/.*(\d{2})\s+(\w{3})\s+(\d{4}).*/,'$2 $1, $3') + '</span></a></li>';
             }).join('');
         }
         lastSearchResultHash = currentResultHash;
