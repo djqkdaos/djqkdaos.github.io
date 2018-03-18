@@ -20,10 +20,7 @@ categories: linux
         {% endfor %}
     {% endfor %}
 {% endfor %}
-{% if tag == thisTag%}
-	{% else %}
-	<li><span>게시글이 없습니다.<span></li>
-{% endif %}
+{{ paginator.page }}
  </ul>
 </div>
 
