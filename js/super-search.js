@@ -124,7 +124,7 @@
             searchResultsEl.classList.remove('is-hidden');
             searchResultsEl.innerHTML = matchingPosts.map(function (post) {
                 d = new Date(post.pubDate);
-				if(post.title.length>12{
+				if(post.title.length>12){
 					var tmp1 = post.title.substr(0,12);
 					tmp1 = tmp1+'...';
 				}else{
