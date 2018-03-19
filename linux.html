@@ -5,7 +5,7 @@ categories: linux
 ---
 <div class="container">
   <div id="article">
-  <h1>linux</h1>
+  <h1>Linux</h1>
   <ul class="posts">
     {% if site.categories[page.categories] %}
         {% for post in site.categories[page.categories] %}
@@ -13,7 +13,7 @@ categories: linux
         {% endfor %}
     
     {% else %}
-        <p>게시글이 없습니다.</p>
+        <p>There are no posts in this categories.</p>
     {% endif %}
  </ul>
 </div>

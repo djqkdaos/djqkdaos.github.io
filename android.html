@@ -7,23 +7,13 @@ categories: android
   <div id="article">
   <h1>Android</h1>
   <ul class="posts">
-{% assign hasSimilar = '' %}
-{% for post in site.posts  %}
-    {% assign postHasSimilar = false %}
-    {% for tag in post.categories %}
-        {% for thisTag in page.categories %}
-            {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
-               <li><span><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time class="pull-right post-list">{{ post.date | date_to_string | date: "%b %-d, %Y"  }}</time></span></li>
-                {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
-                {% assign postHasSimilar = true %}
-			{% endif %}
+    {% if site.categories[page.categories] %}
+        {% for post in site.categories[page.categories] %}
+			<li><span><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time class="pull-right post-list">{{ post.date | date_to_string | date: "%b %-d, %Y"  }}</time></span></li>      
         {% endfor %}
-    {% endfor %}
-{% endfor %}
-{% if tag == thisTag%}
-	{% else %}
-	<li><span>게시글이 없습니다.<span></li>
-{% endif %}
+    
+    {% else %}
+        <p>There are no posts in this categories.</p>
+    {% endif %}
  </ul>
 </div>
-
