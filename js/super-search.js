@@ -125,7 +125,7 @@
             searchResultsEl.innerHTML = matchingPosts.map(function (post) {
                 d = new Date(post.pubDate);
 				var tmp1;
-				if(post.title.length>9){
+				if(post.title.length>13){
 					tmp1 = post.title.substr(0,9);
 					var tmp2 = post.title.substr(post.title.length-3,post.title.length-1);
 					tmp1 = tmp1+'...'+tmp2;
